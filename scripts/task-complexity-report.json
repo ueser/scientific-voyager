@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "generatedAt": "2025-04-11T22:33:36.594Z",
+    "tasksAnalyzed": 10,
+    "thresholdScore": 5,
+    "projectName": "Your Project Name",
+    "usedResearch": false
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Setup Project Architecture and Environment",
+      "complexityScore": 8,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the project architecture setup into specific steps covering: 1) Module structure design, 2) API interface definitions, 3) Development environment configuration, 4) Repository setup with documentation, and 5) Configuration management system implementation.",
+      "reasoning": "This task involves establishing the entire foundation of the project with multiple interconnected components. It requires architectural design decisions that will impact all subsequent development. The complexity is high due to the need for forward planning, technical expertise across multiple domains, and creating scalable interfaces between components."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Implement Scientific Literature Extraction Module",
+      "complexityScore": 7,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the literature extraction module implementation into: 1) Data source adapter development (PubMed API integration), 2) Abstract extraction and normalization pipeline, 3) Queue system for batch processing, and 4) Caching and error handling mechanisms.",
+      "reasoning": "This task involves external API integration, data processing pipelines, and handling potentially large volumes of data. The complexity comes from needing to build robust error handling, implementing efficient caching, and ensuring the system can scale with increasing data volumes while maintaining performance."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Develop Multi-scale Hierarchical Model and Categorization",
+      "complexityScore": 9,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the hierarchical categorization system into: 1) Prompt engineering for biological scale classification, 2) Statement type classification system, 3) Validation and quality assurance layer, 4) Feedback mechanism for improving accuracy, and 5) Confidence scoring implementation.",
+      "reasoning": "This task requires sophisticated AI prompt engineering, domain knowledge of biological hierarchies, and building complex classification systems. The high complexity stems from the need to ensure accurate categorization across multiple dimensions while implementing feedback loops to improve system performance over time."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Build Statement Storage and Indexing System",
+      "complexityScore": 8,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the storage and indexing system into: 1) Local storage implementation for prototype phase, 2) Neo4j database schema design and implementation, 3) UID generation and indexing mechanism, and 4) Data access layer with storage backend abstraction.",
+      "reasoning": "This task involves designing and implementing database schemas, creating indexing mechanisms for efficient retrieval, and building abstraction layers to support different storage backends. The complexity is high due to the need for ensuring data integrity, handling versioning, and building migration tools between storage systems."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Implement Knowledge Graph Construction",
+      "complexityScore": 9,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the knowledge graph construction into: 1) Graph data structure design, 2) Relationship extraction using GPT-4o, 3) Graph traversal and manipulation algorithms, 4) Conflict resolution mechanisms, and 5) Graph persistence and integrity validation.",
+      "reasoning": "This task requires expertise in graph theory, AI-based relationship extraction, and complex data structures. The high complexity comes from the need to identify meaningful relationships between statements, handle contradictions, and ensure the graph maintains integrity as it grows."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Develop Insights Generation System",
+      "complexityScore": 10,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide the insights generation system into: 1) Triangulation algorithm implementation, 2) GPT-4o prompt engineering for insight synthesis, 3) Verification and validation mechanisms, 4) Source tracing implementation, and 5) Confidence scoring and categorization system.",
+      "reasoning": "This is the most complex task as it represents the core intelligence of the system. It requires sophisticated algorithms to identify non-trivial connections across disparate sources, advanced prompt engineering, and rigorous verification mechanisms. The complexity is highest due to the creative and innovative nature of generating meaningful scientific insights."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Implement Dynamic Task Generation",
+      "complexityScore": 8,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down the dynamic task generation component into: 1) Task generation algorithm based on knowledge state, 2) GPT-4o prompt engineering for task formulation, 3) Task prioritization and dependency tracking system, and 4) Feedback loop for task effectiveness evaluation.",
+      "reasoning": "This task involves creating an intelligent system that can identify knowledge gaps and generate meaningful exploration tasks. The complexity stems from the need to understand the current knowledge state, formulate specific actionable tasks, and implement feedback mechanisms to improve task generation over time."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Develop Search and Retrieval System",
+      "complexityScore": 7,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the search and retrieval system into: 1) Keyword and concept-based search implementation, 2) Faceted search with filtering capabilities, 3) Relevance ranking and query expansion algorithms, and 4) Search API and history functionality.",
+      "reasoning": "This task requires implementing sophisticated search algorithms across multiple data types. The complexity comes from the need to support different search paradigms (keyword, concept-based), implement relevance ranking, and create a flexible API for programmatic access."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Build Visualization and User Interface",
+      "complexityScore": 8,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the visualization and UI development into: 1) Interactive knowledge graph visualization, 2) Hierarchical biological scale views, 3) Insights explorer with filtering and sorting, 4) Task management interface, and 5) Responsive dashboard implementation.",
+      "reasoning": "This task involves creating intuitive visualizations for complex data structures and relationships. The complexity stems from the need to represent hierarchical and graph data in user-friendly ways, implement interactive components, and ensure the interface works across different device sizes."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Implement System Integration and Deployment Pipeline",
+      "complexityScore": 8,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide the system integration and deployment into: 1) Component integration with comprehensive testing, 2) Authentication and authorization implementation, 3) Environment-specific deployment scripts, 4) Monitoring and performance optimization, and 5) CI/CD pipeline setup.",
+      "reasoning": "This task requires bringing together all components into a cohesive system and establishing infrastructure for deployment. The complexity is high due to the need for comprehensive testing, implementing security measures, setting up monitoring, and creating a robust CI/CD pipeline across multiple environments."
+    }
+  ]
+}
