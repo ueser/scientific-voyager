@@ -1,0 +1,30 @@
+# Testing Environment Configuration
+
+# Override base settings for testing
+debug: true
+
+# Testing-specific logging
+logging:
+  level: DEBUG
+  console_output: true
+  file: logs/voyager_test.log
+
+# LLM settings for testing
+llm:
+  model: gpt-4o
+  temperature: 0.0  # Zero temperature for deterministic testing
+  max_tokens: 1000  # Lower token limit for testing
+  # Mock mode for testing without API calls
+  mock_responses: true
+
+# Database settings for testing
+database:
+  type: sqlite
+  path: ":memory:"  # In-memory database for testing
+  reset_on_startup: true
+
+# Search settings for testing
+search:
+  max_results: 10  # Limited results for testing
+  min_relevance: 0.0  # No relevance filtering for testing
+  mock_search: true  # Use mock search results

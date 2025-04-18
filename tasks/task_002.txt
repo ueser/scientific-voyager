@@ -1,6 +1,6 @@
 # Task ID: 2
 # Title: Implement Scientific Literature Extraction Module
-# Status: pending
+# Status: done
 # Dependencies: 1
 # Priority: high
 # Description: Develop the component responsible for extracting scientific literature from sources like PubMed and processing abstracts for further analysis.
@@ -11,7 +11,7 @@ Create adapters for different data sources (starting with PubMed API). Implement
 Unit tests with mock responses for API calls. Integration tests with small sample datasets. Measure extraction accuracy using known papers. Test error handling with simulated network failures. Validate output format consistency.
 
 # Subtasks:
-## 1. Implement PubMed API Adapter [pending]
+## 1. Implement PubMed API Adapter [done]
 ### Dependencies: None
 ### Description: Create an adapter for the PubMed API to fetch scientific literature data
 ### Details:
@@ -30,7 +30,7 @@ Testing approach:
 - Integration test with the actual PubMed API using a small set of test queries
 - Verify proper handling of various response types and edge cases
 
-## 2. Build Abstract Extraction and Normalization Pipeline [pending]
+## 2. Build Abstract Extraction and Normalization Pipeline [done]
 ### Dependencies: 2.1
 ### Description: Develop a pipeline for extracting, cleaning, and normalizing scientific abstracts from the retrieved literature
 ### Details:
@@ -51,7 +51,7 @@ Testing approach:
 - Create a test suite with diverse scientific abstracts to verify robustness
 - Validate that the pipeline preserves scientific meaning while standardizing format
 
-## 3. Develop Queue System for Batch Processing [pending]
+## 3. Develop Queue System for Batch Processing [done]
 ### Dependencies: 2.1, 2.2
 ### Description: Implement a queue system to manage processing of large volumes of scientific papers
 ### Details:
@@ -71,7 +71,7 @@ Testing approach:
 - Stress test with large volumes of papers
 - Test recovery scenarios after simulated failures
 
-## 4. Implement Caching and Error Handling Mechanisms [pending]
+## 4. Implement Caching and Error Handling Mechanisms [done]
 ### Dependencies: 2.1, 2.2, 2.3
 ### Description: Create caching system to avoid redundant API calls and implement robust error handling with retry logic
 ### Details:

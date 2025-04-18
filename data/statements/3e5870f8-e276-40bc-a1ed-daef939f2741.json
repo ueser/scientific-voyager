@@ -1,0 +1,48 @@
+{
+  "uid": "3e5870f8-e276-40bc-a1ed-daef939f2741",
+  "created_at": "2025-04-17T18:31:48.489040",
+  "updated_at": "2025-04-17T18:31:48.489044",
+  "version": 1,
+  "statement": {
+    "text": "The PTEN gene mutation leads to increased PI3K/AKT pathway activation.",
+    "types": [
+      "causal",
+      "descriptive"
+    ],
+    "biological_scales": [
+      "genetic",
+      "molecular"
+    ],
+    "cross_scale_relations": [
+      {
+        "source_scale": "genetic",
+        "target_scale": "molecular",
+        "relation_type": "causal",
+        "description": "Mutation in PTEN gene (genetic) leads to activation of PI3K/AKT pathway (molecular)."
+      }
+    ],
+    "confidence": 0.95,
+    "metadata": {
+      "source": "example",
+      "type_confidences": {
+        "causal": 0.95,
+        "descriptive": 0.8
+      },
+      "scale_confidences": {
+        "genetic": 0.9,
+        "molecular": 0.85
+      }
+    }
+  },
+  "source_id": null,
+  "source_type": null,
+  "extraction_id": null,
+  "classification_ids": [],
+  "entity_ids": [],
+  "relation_ids": [],
+  "tags": [
+    "demo",
+    "biology"
+  ],
+  "metadata": {}
+}

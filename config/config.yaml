@@ -1,0 +1,31 @@
+# Scientific Voyager Base Configuration
+
+# Default environment (can be overridden by environment variables)
+environment: development
+
+# Debug mode (enables additional logging and features)
+debug: false
+
+# Logging configuration
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: logs/voyager.log
+
+# Task execution settings
+execution:
+  max_concurrent_tasks: 5
+  task_timeout_seconds: 300
+  retry_attempts: 3
+
+# Default database settings (can be overridden by environment-specific configs)
+database:
+  type: sqlite
+  path: data/voyager.db
+
+# Default search settings
+search:
+  max_results: 50
+  min_relevance: 0.7
+  cache_results: true
+  cache_expiry_hours: 24

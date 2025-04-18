@@ -1,0 +1,59 @@
+# Task ID: 11
+# Title: Refactor DTO Architecture for Multi-scale Biological Relationships
+# Status: pending
+# Dependencies: 3
+# Priority: medium
+# Description: Redesign StatementDTO and related DTOs to support lists of biological scales and statement types, and to explicitly represent cross-scale relationships in the data model.
+# Details:
+This refactoring task involves several key changes to the DTO architecture:
+
+1. Modify StatementDTO to include:
+   - A list of biological scales (enum or string identifiers) rather than a single scale
+   - A list of statement types rather than a single type
+   - A new field to represent cross-scale relationships (e.g., 'crossScaleRelationships' that contains pairs of scales with relationship type)
+
+2. Create a new CrossScaleRelationshipDTO with properties:
+   - sourceScale: the originating biological scale
+   - targetScale: the target biological scale
+   - relationshipType: the type of relationship between scales
+   - confidence: a measure of the confidence in this relationship
+
+3. Update any related DTOs (such as EvidenceDTO, ContextDTO) to accommodate these changes
+
+4. Ensure backward compatibility:
+   - Add migration logic to convert existing single-scale/single-type statements to the new format
+   - Consider implementing builder patterns for easy construction of these more complex DTOs
+
+5. Update serialization/deserialization logic to handle the new structure
+
+6. Document the new DTO structure comprehensively with clear examples of how to represent different types of cross-scale relationships
+
+This refactoring should build upon the multi-scale hierarchical model developed in Task #3, utilizing the same categorization system but extending it to support more complex relationships.
+
+# Test Strategy:
+Testing should verify both the structural integrity and functional correctness of the refactored DTOs:
+
+1. Unit Tests:
+   - Create tests for serializing and deserializing the new DTO structure
+   - Verify that a StatementDTO with multiple scales and types can be properly created and accessed
+   - Test the CrossScaleRelationshipDTO to ensure it correctly represents relationships
+   - Test edge cases: empty lists, null values, extremely long lists of scales/types
+
+2. Migration Tests:
+   - Verify that existing data with single scale/type correctly converts to the new format
+   - Test conversion of a representative sample of production data
+
+3. Integration Tests:
+   - Test the DTOs in the context of the full pipeline
+   - Verify that APIs consuming these DTOs can handle the new structure
+   - Test that front-end components can properly display multi-scale relationships
+
+4. Performance Tests:
+   - Benchmark serialization/deserialization performance before and after changes
+   - Test with large datasets to ensure no significant performance degradation
+
+5. Acceptance Criteria:
+   - All unit, integration, and migration tests pass
+   - Existing functionality continues to work with the new DTO structure
+   - Documentation clearly explains the new structure and provides examples
+   - A sample visualization demonstrates how cross-scale relationships are represented

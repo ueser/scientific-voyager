@@ -1,0 +1,44 @@
+# Task ID: 12
+# Title: Enhance Classification System for Multi-scale Statement Output and Relationship Mapping
+# Status: pending
+# Dependencies: 3
+# Priority: medium
+# Description: Update the existing classification and extraction logic to support multiple scale/type assignments per statement and identify cross-scale relationships between extracted statements.
+# Details:
+This task involves enhancing the current classification system to move beyond single-scale categorization to a more nuanced approach where statements can belong to multiple biological scales simultaneously. Key implementation points include:
+
+1. Modify the classifier architecture to output probability distributions across all scales (genetic, molecular, cellular, systems, organism) rather than just the top category
+2. Implement a threshold-based approach to assign multiple scales to statements when confidence scores exceed defined thresholds
+3. Develop relationship detection algorithms to identify connections between statements across different scales (e.g., how a molecular process relates to a cellular function)
+4. Update the database schema to support many-to-many relationships between statements and scales/types
+5. Create a relationship table to store and query cross-scale connections
+6. Modify the extraction pipeline to preserve context that helps establish these relationships
+7. Implement natural language processing techniques to detect causal, correlative, or hierarchical relationships between statements
+8. Update the API response format to include multi-scale classifications and relationship data
+
+The implementation should maintain backward compatibility with systems expecting single-scale classifications while extending functionality for multi-scale awareness.
+
+# Test Strategy:
+Testing should verify both the multi-scale classification accuracy and relationship detection capabilities:
+
+1. Classification Testing:
+   - Create a test dataset of 100+ statements with gold-standard multi-scale annotations
+   - Measure precision, recall, and F1 scores for multi-scale classification
+   - Verify that statements previously classified correctly maintain accurate primary classifications
+   - Test edge cases where statements clearly span multiple scales
+   - Verify the system can handle statements with 1, 2, 3, or more applicable scales
+
+2. Relationship Detection Testing:
+   - Develop test cases with known relationships between statements across scales
+   - Measure accuracy of relationship detection against expert-annotated ground truth
+   - Test with both explicit relationships ("X causes Y") and implicit relationships
+   - Verify relationship directionality is correctly captured
+
+3. Performance Testing:
+   - Benchmark processing time to ensure multi-scale classification doesn't significantly impact performance
+   - Test with large batches (1000+ statements) to verify scalability
+
+4. Integration Testing:
+   - Verify downstream systems can properly consume the enhanced output format
+   - Test visualization components with multi-scale data
+   - Ensure search and filtering functionality works with multi-scale classifications

@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Setup Project Architecture and Environment",
       "description": "Establish the foundational architecture for Scientific Voyager, including module structure, API definitions, and development environment setup.",
-      "status": "in-progress",
+      "status": "done",
       "dependencies": [],
       "priority": "high",
       "details": "Create a modular architecture with clear separation of concerns: data ingestion, processing, storage, and presentation layers. Set up development environment with Python 3.10+, configure OpenAI API integration for GPT-4o, establish project repository with proper documentation structure. Define interfaces between components to ensure scalability. Create configuration management for different deployment environments.",
@@ -16,7 +16,7 @@
           "description": "Define and implement the foundational module structure with clear separation of concerns, including data ingestion, processing, storage, and presentation layers.",
           "dependencies": [],
           "details": "Implementation steps:\n1. Create project root directory with descriptive name\n2. Establish main package structure with modules for:\n   - data_ingestion: for retrieving data from external sources\n   - data_processing: for transforming and analyzing data\n   - storage: for data persistence and retrieval\n   - presentation: for rendering outputs to users\n   - core: for shared utilities and common functionality\n3. Create __init__.py files for proper Python package structure\n4. Implement basic module-level docstrings explaining each component's purpose\n5. Define clear import patterns between modules to maintain separation of concerns\n6. Create README.md with module structure documentation\n\nTesting approach:\n- Verify package imports work correctly\n- Ensure basic directory structure matches design specifications\n- Review documentation for clarity and completeness",
-          "status": "in-progress",
+          "status": "done",
           "parentTaskId": 1
         },
         {
@@ -27,7 +27,7 @@
             1
           ],
           "details": "Implementation steps:\n1. For each module defined in subtask 1, create interface definitions:\n   - Define abstract base classes for key components using Python's ABC module\n   - Document input/output contracts for each public method\n   - Specify error handling and exception patterns\n2. Create interface for OpenAI API integration:\n   - Define wrapper classes for GPT-4o interactions\n   - Establish retry and error handling patterns\n   - Document rate limiting and token management approaches\n3. Design data transfer objects (DTOs) for communication between layers\n4. Document all interfaces in Markdown within an 'interfaces/' directory\n5. Create sequence diagrams showing component interactions\n\nTesting approach:\n- Create stub implementations to verify interface contracts\n- Review interface definitions with team members\n- Ensure all public methods have clear documentation",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 1
         },
         {
@@ -38,7 +38,7 @@
             1
           ],
           "details": "Implementation steps:\n1. Create requirements.txt and/or pyproject.toml with core dependencies:\n   - Python 3.10+ as minimum version\n   - OpenAI Python client library\n   - Testing frameworks (pytest)\n   - Code quality tools (black, isort, flake8, mypy)\n   - Any other required libraries\n2. Set up virtual environment management:\n   - Create scripts for venv creation\n   - Document activation process\n3. Configure development tools:\n   - Set up pre-commit hooks for code quality\n   - Configure editor settings (.editorconfig)\n   - Set up linting configuration files\n4. Create Makefile or equivalent with common commands\n5. Document environment setup process in CONTRIBUTING.md\n\nTesting approach:\n- Create fresh environment and verify setup process works\n- Run automated tests to ensure all dependencies are properly installed\n- Verify code quality tools work as expected",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 1
         },
         {
@@ -50,7 +50,7 @@
             3
           ],
           "details": "Implementation steps:\n1. Initialize Git repository with appropriate .gitignore file\n2. Create documentation structure:\n   - README.md with project overview, setup instructions, and usage examples\n   - CONTRIBUTING.md with development workflow and guidelines\n   - docs/ directory with detailed technical documentation\n   - API documentation templates using a tool like Sphinx\n3. Set up issue and PR templates in .github/ directory\n4. Create LICENSE file with appropriate license\n5. Establish branch protection rules and code review guidelines\n6. Configure CI/CD pipeline skeleton (GitHub Actions or equivalent)\n7. Document Git workflow (branching strategy, commit message format)\n\nTesting approach:\n- Review documentation for completeness and clarity\n- Test documentation build process if using tools like Sphinx\n- Verify CI/CD pipeline configuration with test commits",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 1
         },
         {
@@ -63,7 +63,7 @@
             3
           ],
           "details": "Implementation steps:\n1. Design configuration structure:\n   - Create config/ directory for configuration files\n   - Implement hierarchical configuration with environment-specific overrides\n   - Separate sensitive from non-sensitive configuration\n2. Implement configuration loading mechanism:\n   - Support for environment variables\n   - Support for .env files (using python-dotenv or similar)\n   - Support for YAML/JSON configuration files\n3. Create secure storage for API keys and sensitive data:\n   - Implement template for .env.example with placeholder values\n   - Document secure handling of API keys\n   - Add OpenAI API key configuration\n4. Create configuration validation logic:\n   - Implement schema validation for configuration\n   - Add startup checks for required configuration\n5. Document configuration system in docs/configuration.md\n\nTesting approach:\n- Unit tests for configuration loading and validation\n- Test with different environment configurations\n- Verify sensitive data handling practices\n- Ensure proper error messages for missing/invalid configuration",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 1
         }
       ]
@@ -72,7 +72,7 @@
       "id": 2,
       "title": "Implement Scientific Literature Extraction Module",
       "description": "Develop the component responsible for extracting scientific literature from sources like PubMed and processing abstracts for further analysis.",
-      "status": "pending",
+      "status": "done",
       "dependencies": [
         1
       ],
@@ -86,7 +86,7 @@
           "description": "Create an adapter for the PubMed API to fetch scientific literature data",
           "dependencies": [],
           "details": "Implementation details:\n1. Create a PubMedAdapter class that handles API authentication and requests\n2. Implement methods for searching articles by keywords, date ranges, and other relevant parameters\n3. Add functionality to fetch full article metadata including authors, journal, publication date, DOI\n4. Implement rate limiting according to PubMed API guidelines\n5. Create a standard response format that normalizes the PubMed data structure\n6. Add comprehensive logging for API interactions\n7. Write unit tests using mock responses to verify adapter functionality\n8. Create configuration for API endpoints, authentication, and request parameters\n\nTesting approach:\n- Unit test the adapter with mock API responses\n- Integration test with the actual PubMed API using a small set of test queries\n- Verify proper handling of various response types and edge cases",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 2
         },
         {
@@ -97,7 +97,7 @@
             1
           ],
           "details": "Implementation details:\n1. Create an AbstractProcessor class that accepts data from the PubMed adapter\n2. Implement text extraction logic to isolate abstract content from full article metadata\n3. Develop cleaning functions to handle common issues in scientific text (special characters, formatting)\n4. Build normalization processes including:\n   - Text standardization (lowercase, whitespace normalization)\n   - Scientific terminology standardization\n   - Acronym detection and expansion\n5. Implement entity recognition for key scientific elements (methods, results, conclusions)\n6. Create a standardized output format for processed abstracts\n7. Add configurable processing options (level of cleaning, normalization steps to apply)\n\nTesting approach:\n- Unit test each processing function with various abstract samples\n- Create a test suite with diverse scientific abstracts to verify robustness\n- Validate that the pipeline preserves scientific meaning while standardizing format",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 2
         },
         {
@@ -109,7 +109,7 @@
             2
           ],
           "details": "Implementation details:\n1. Design a queue data structure to store pending extraction and processing tasks\n2. Implement a worker system that processes queue items asynchronously\n3. Create batch processing functionality with configurable batch sizes\n4. Add prioritization logic for different types of literature requests\n5. Implement monitoring and reporting of queue status and processing metrics\n6. Build pause/resume capabilities for controlling processing flow\n7. Add distributed processing support for handling very large volumes\n8. Implement queue persistence to handle service restarts\n\nTesting approach:\n- Test queue operations with varying load conditions\n- Verify batch processing with different batch sizes\n- Stress test with large volumes of papers\n- Test recovery scenarios after simulated failures",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 2
         },
         {
@@ -122,7 +122,7 @@
             3
           ],
           "details": "Implementation details:\n1. Design a caching system for API responses using a key-value store\n2. Implement cache invalidation policies based on time and content changes\n3. Create a comprehensive error handling framework that categorizes different failure types:\n   - Network failures\n   - API rate limiting/throttling\n   - Data format issues\n   - Processing errors\n4. Implement retry logic with exponential backoff for transient failures\n5. Develop fallback mechanisms for critical failures\n6. Create detailed error logging and alerting for persistent issues\n7. Add configuration options for cache TTL, retry attempts, and backoff parameters\n8. Implement circuit breaker pattern to prevent cascading failures\n\nTesting approach:\n- Test cache hit/miss scenarios and verify cache effectiveness\n- Simulate various error conditions to verify proper handling\n- Measure performance improvements from caching\n- Verify retry logic works correctly under different failure scenarios",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 2
         }
       ]
@@ -131,7 +131,7 @@
       "id": 3,
       "title": "Develop Multi-scale Hierarchical Model and Categorization",
       "description": "Build the system to categorize extracted statements into biological scales (genetic, molecular, cellular, systems, organism) and statement types.",
-      "status": "pending",
+      "status": "done",
       "dependencies": [
         2
       ],
@@ -145,7 +145,7 @@
           "description": "Develop effective prompts for GPT-4o to accurately categorize biological statements into genetic, molecular, cellular, systems, and organism scales.",
           "dependencies": [],
           "details": "Implementation steps:\n1. Research and compile examples of statements at each biological scale for training data\n2. Design initial prompt templates with clear instructions and examples for scale classification\n3. Implement a prompt engineering module that formats statements for classification\n4. Create a testing harness to evaluate prompt effectiveness with sample statements\n5. Iterate on prompt design based on classification accuracy\n6. Document prompt patterns that yield the highest accuracy\n\nTesting approach:\n- Use a curated set of pre-classified statements to measure classification accuracy\n- Implement confusion matrix analysis to identify which scales are frequently misclassified\n- Perform A/B testing of different prompt variations to determine optimal approach",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 3
         },
         {
@@ -156,7 +156,7 @@
             1
           ],
           "details": "Implementation steps:\n1. Define clear criteria and characteristics for each statement type\n2. Develop classification logic using NLP techniques and pattern recognition\n3. Implement a classification module that processes statements and returns their type\n4. Build type-specific prompt enhancements that leverage the biological scale classification\n5. Create a unified API that returns both scale and type classifications\n6. Implement error handling for ambiguous statements\n\nTesting approach:\n- Create a test suite with examples of each statement type\n- Measure precision and recall for each statement type classification\n- Test edge cases where statements might belong to multiple types\n- Validate that the system works correctly when integrated with the scale classification",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 3
         },
         {
@@ -168,7 +168,7 @@
             2
           ],
           "details": "Implementation steps:\n1. Design validation rules and constraints for each classification category\n2. Implement consistency checks to flag potentially incorrect classifications\n3. Create a validation pipeline that processes classification results\n4. Develop a scoring system to quantify classification quality\n5. Build a reporting module to highlight problematic classifications\n6. Implement an override mechanism for manual correction of misclassifications\n\nTesting approach:\n- Test with deliberately misclassified statements to ensure detection\n- Validate that the system correctly identifies edge cases and ambiguities\n- Measure the validation system's ability to improve overall classification accuracy\n- Test integration with both scale and type classification systems",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 3
         },
         {
@@ -181,7 +181,7 @@
             3
           ],
           "details": "Implementation steps:\n1. Design a feedback collection interface for both automated and human feedback\n2. Implement a feedback database to store correction data and improvement suggestions\n3. Create an analysis module to identify patterns in classification errors\n4. Develop a prompt refinement system that automatically adjusts prompts based on feedback\n5. Build a retraining pipeline for periodic model updates\n6. Implement metrics to track improvement over time\n\nTesting approach:\n- Simulate feedback scenarios to test the system's ability to incorporate corrections\n- Measure classification improvement rates after feedback integration\n- Test the feedback loop with actual users to validate usability\n- Verify that the system properly prioritizes and applies the most impactful feedback",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 3
         },
         {
@@ -195,7 +195,7 @@
             4
           ],
           "details": "Implementation steps:\n1. Design a confidence scoring algorithm based on model outputs and validation results\n2. Implement the confidence scoring module for both scale and type classifications\n3. Create a taxonomy data structure to represent classification hierarchies\n4. Build a taxonomy manager interface for viewing and editing taxonomies\n5. Implement versioning for taxonomies to track changes over time\n6. Develop integration between confidence scores and the feedback mechanism\n\nTesting approach:\n- Validate that confidence scores correlate with actual classification accuracy\n- Test taxonomy updates to ensure they propagate correctly through the system\n- Verify that low-confidence classifications are properly flagged for review\n- Test the system's ability to maintain taxonomy integrity during updates",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 3
         }
       ]
@@ -204,7 +204,7 @@
       "id": 4,
       "title": "Build Statement Storage and Indexing System",
       "description": "Create the data storage infrastructure for extracted and categorized statements with proper indexing and UID assignment.",
-      "status": "pending",
+      "status": "done",
       "dependencies": [
         3
       ],
@@ -218,7 +218,7 @@
           "description": "Create a file-based storage system for extracted biomedical statements that will serve during the prototype phase",
           "dependencies": [],
           "details": "Implementation steps:\n1. Define a statement data model with fields for content, metadata, source, timestamp, and version information\n2. Create a directory structure for organizing statement files (e.g., by category, date, or source)\n3. Implement functions to serialize/deserialize statements to/from JSON files\n4. Add CRUD operations (create, read, update, delete) for statement management\n5. Implement basic search functionality based on file metadata\n6. Add error handling and data validation\n7. Implement simple backup mechanism\n\nTesting approach:\n- Unit tests for CRUD operations\n- Test with sample statements of varying complexity\n- Verify data integrity after read/write operations\n- Performance testing with larger datasets to identify bottlenecks",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 4
         },
         {
@@ -229,7 +229,7 @@
             1
           ],
           "details": "Implementation steps:\n1. Design UID schema that ensures uniqueness and traceability (consider using UUIDs with additional metadata encoded)\n2. Implement UID generator function with collision detection\n3. Create an index structure for biomedical terms/concepts extraction\n4. Build term extraction logic to identify key biomedical concepts from statements\n5. Implement forward and inverted indices for efficient lookup\n6. Create functions to update indices when statements are added/modified/deleted\n7. Implement versioning system for statements that may be updated\n\nTesting approach:\n- Verify UID uniqueness with large batches of generated IDs\n- Test indexing with sample biomedical text containing known terms\n- Benchmark index lookup performance\n- Test versioning system with statement updates",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 4
         },
         {
@@ -241,7 +241,7 @@
             2
           ],
           "details": "Implementation steps:\n1. Design Neo4j nodes and relationships schema for biomedical statements\n2. Define properties for statement nodes (using UID system from subtask 2)\n3. Create relationship types for different statement associations\n4. Implement Cypher queries for basic CRUD operations\n5. Set up indices in Neo4j for optimized query performance\n6. Implement constraint validations for data integrity\n7. Create database initialization and setup scripts\n\nTesting approach:\n- Verify schema with test data insertion and retrieval\n- Test complex relationship queries\n- Benchmark performance with larger datasets\n- Validate constraints and data integrity rules\n- Test recovery from failure scenarios",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 4
         },
         {
@@ -254,7 +254,7 @@
             3
           ],
           "details": "Implementation steps:\n1. Define abstract interfaces for storage operations (independent of backend)\n2. Implement concrete adapter classes for both local storage and Neo4j backends\n3. Create a factory pattern for instantiating the appropriate storage backend\n4. Build configuration system to control backend selection\n5. Implement migration tools to transfer data between storage backends\n6. Add data validation during migration to ensure integrity\n7. Create logging and monitoring for storage operations\n8. Implement graceful fallback mechanisms in case of backend failures\n\nTesting approach:\n- Unit tests for each adapter implementation\n- Integration tests verifying seamless backend switching\n- Test migration tools with various dataset sizes\n- Verify data consistency before and after migration\n- Performance comparison between different backends\n- Test error handling and recovery scenarios",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 4
         }
       ]
@@ -277,7 +277,7 @@
           "description": "Create the fundamental graph data structure with nodes representing statements and edges representing relationships between statements.",
           "dependencies": [],
           "details": "Implementation steps:\n1. Define Node class with properties for statement ID, content, category, and metadata\n2. Define Edge class with properties for relationship type, source node, target node, and confidence score\n3. Create Graph class that maintains collections of nodes and edges\n4. Implement basic graph operations: add/remove nodes, add/remove edges, find nodes/edges\n5. Add methods for basic graph statistics (node count, edge count, density)\n6. Create serialization/deserialization methods for the graph structure\n\nTesting approach:\n- Unit test each class and method with sample data\n- Test graph operations with small sample graphs\n- Verify correct handling of edge cases (empty graph, disconnected nodes)",
-          "status": "pending",
+          "status": "done",
           "parentTaskId": 5
         },
         {
@@ -611,6 +611,54 @@
       "priority": "medium",
       "details": "Integrate all modules with comprehensive testing. Implement authentication and authorization system. Create deployment scripts for development, staging, and production environments. Build monitoring and alerting system. Implement performance optimization for production. Create backup and disaster recovery procedures. Develop system documentation including architecture, API references, and user guides. Set up continuous integration and deployment pipeline.",
       "testStrategy": "Conduct end-to-end system testing. Perform load testing to identify bottlenecks. Test deployment procedures in isolated environments. Validate system recovery from simulated failures. Measure system performance metrics against requirements. Conduct security testing for potential vulnerabilities."
+    },
+    {
+      "id": 11,
+      "title": "Refactor DTO Architecture for Multi-scale Biological Relationships",
+      "description": "Redesign StatementDTO and related DTOs to support lists of biological scales and statement types, and to explicitly represent cross-scale relationships in the data model.",
+      "details": "This refactoring task involves several key changes to the DTO architecture:\n\n1. Modify StatementDTO to include:\n   - A list of biological scales (enum or string identifiers) rather than a single scale\n   - A list of statement types rather than a single type\n   - A new field to represent cross-scale relationships (e.g., 'crossScaleRelationships' that contains pairs of scales with relationship type)\n\n2. Create a new CrossScaleRelationshipDTO with properties:\n   - sourceScale: the originating biological scale\n   - targetScale: the target biological scale\n   - relationshipType: the type of relationship between scales\n   - confidence: a measure of the confidence in this relationship\n\n3. Update any related DTOs (such as EvidenceDTO, ContextDTO) to accommodate these changes\n\n4. Ensure backward compatibility:\n   - Add migration logic to convert existing single-scale/single-type statements to the new format\n   - Consider implementing builder patterns for easy construction of these more complex DTOs\n\n5. Update serialization/deserialization logic to handle the new structure\n\n6. Document the new DTO structure comprehensively with clear examples of how to represent different types of cross-scale relationships\n\nThis refactoring should build upon the multi-scale hierarchical model developed in Task #3, utilizing the same categorization system but extending it to support more complex relationships.",
+      "testStrategy": "Testing should verify both the structural integrity and functional correctness of the refactored DTOs:\n\n1. Unit Tests:\n   - Create tests for serializing and deserializing the new DTO structure\n   - Verify that a StatementDTO with multiple scales and types can be properly created and accessed\n   - Test the CrossScaleRelationshipDTO to ensure it correctly represents relationships\n   - Test edge cases: empty lists, null values, extremely long lists of scales/types\n\n2. Migration Tests:\n   - Verify that existing data with single scale/type correctly converts to the new format\n   - Test conversion of a representative sample of production data\n\n3. Integration Tests:\n   - Test the DTOs in the context of the full pipeline\n   - Verify that APIs consuming these DTOs can handle the new structure\n   - Test that front-end components can properly display multi-scale relationships\n\n4. Performance Tests:\n   - Benchmark serialization/deserialization performance before and after changes\n   - Test with large datasets to ensure no significant performance degradation\n\n5. Acceptance Criteria:\n   - All unit, integration, and migration tests pass\n   - Existing functionality continues to work with the new DTO structure\n   - Documentation clearly explains the new structure and provides examples\n   - A sample visualization demonstrates how cross-scale relationships are represented",
+      "status": "pending",
+      "dependencies": [
+        3
+      ],
+      "priority": "medium"
+    },
+    {
+      "id": 12,
+      "title": "Enhance Classification System for Multi-scale Statement Output and Relationship Mapping",
+      "description": "Update the existing classification and extraction logic to support multiple scale/type assignments per statement and identify cross-scale relationships between extracted statements.",
+      "details": "This task involves enhancing the current classification system to move beyond single-scale categorization to a more nuanced approach where statements can belong to multiple biological scales simultaneously. Key implementation points include:\n\n1. Modify the classifier architecture to output probability distributions across all scales (genetic, molecular, cellular, systems, organism) rather than just the top category\n2. Implement a threshold-based approach to assign multiple scales to statements when confidence scores exceed defined thresholds\n3. Develop relationship detection algorithms to identify connections between statements across different scales (e.g., how a molecular process relates to a cellular function)\n4. Update the database schema to support many-to-many relationships between statements and scales/types\n5. Create a relationship table to store and query cross-scale connections\n6. Modify the extraction pipeline to preserve context that helps establish these relationships\n7. Implement natural language processing techniques to detect causal, correlative, or hierarchical relationships between statements\n8. Update the API response format to include multi-scale classifications and relationship data\n\nThe implementation should maintain backward compatibility with systems expecting single-scale classifications while extending functionality for multi-scale awareness.",
+      "testStrategy": "Testing should verify both the multi-scale classification accuracy and relationship detection capabilities:\n\n1. Classification Testing:\n   - Create a test dataset of 100+ statements with gold-standard multi-scale annotations\n   - Measure precision, recall, and F1 scores for multi-scale classification\n   - Verify that statements previously classified correctly maintain accurate primary classifications\n   - Test edge cases where statements clearly span multiple scales\n   - Verify the system can handle statements with 1, 2, 3, or more applicable scales\n\n2. Relationship Detection Testing:\n   - Develop test cases with known relationships between statements across scales\n   - Measure accuracy of relationship detection against expert-annotated ground truth\n   - Test with both explicit relationships (\"X causes Y\") and implicit relationships\n   - Verify relationship directionality is correctly captured\n\n3. Performance Testing:\n   - Benchmark processing time to ensure multi-scale classification doesn't significantly impact performance\n   - Test with large batches (1000+ statements) to verify scalability\n\n4. Integration Testing:\n   - Verify downstream systems can properly consume the enhanced output format\n   - Test visualization components with multi-scale data\n   - Ensure search and filtering functionality works with multi-scale classifications",
+      "status": "pending",
+      "dependencies": [
+        3
+      ],
+      "priority": "medium"
+    },
+    {
+      "id": 13,
+      "title": "Implement Cross-Scale and Multi-Label Validation System",
+      "description": "Develop a validation system that ensures consistency and correctness across multiple biological scales and overlapping labels in the categorization system.",
+      "details": "This task involves creating a comprehensive validation framework that checks the logical consistency of multi-label assignments and cross-scale relationships in our hierarchical model. Key implementation components include:\n\n1. Cross-scale consistency validators: Implement rules that ensure statements categorized at different biological scales maintain logical consistency (e.g., a molecular process should align with related cellular functions).\n\n2. Multi-label validation logic: Create algorithms to verify that when multiple labels are assigned to a statement, they are logically compatible and don't contain contradictory classifications.\n\n3. Confidence scoring: Implement a system that calculates confidence scores for categorizations based on potential conflicts or ambiguities in multi-label scenarios.\n\n4. Error detection and reporting: Develop comprehensive error and warning messages that precisely identify the nature of validation failures, including specific rule violations and suggested corrections.\n\n5. Edge case handling: Address special cases where apparent contradictions might actually be valid scientific concepts that span multiple scales or categories.\n\nThe system should integrate with the existing multi-scale hierarchical model developed in Task 3, accessing the categorization data structure directly rather than creating duplicate logic.",
+      "testStrategy": "Testing should verify both the technical implementation and biological validity of the validation system:\n\n1. Unit tests:\n   - Test each validation rule independently with known valid and invalid examples\n   - Verify error messages are clear and actionable\n   - Test edge cases where validation rules might conflict\n\n2. Integration tests:\n   - Process a diverse corpus of pre-categorized statements with known cross-scale relationships\n   - Verify that valid multi-label assignments pass validation\n   - Confirm that intentionally contradictory labels trigger appropriate warnings\n\n3. Biological validation:\n   - Create a test suite of biologically complex examples that span multiple scales\n   - Include examples of emergent properties where lower-scale processes create higher-scale effects\n   - Have domain experts review a sample of validation results for biological accuracy\n\n4. Performance testing:\n   - Measure validation speed on large datasets\n   - Ensure memory usage remains reasonable with complex hierarchical relationships\n\n5. Regression testing:\n   - Create a benchmark dataset of edge cases to ensure future changes don't break validation logic",
+      "status": "pending",
+      "dependencies": [
+        3
+      ],
+      "priority": "medium"
+    },
+    {
+      "id": 14,
+      "title": "Update Documentation and Example Scripts for Multi-label and Cross-scale Classification",
+      "description": "Update example scripts and documentation to demonstrate how to use the system for multi-label classification and cross-scale categorization of biological statements.",
+      "details": "This task involves creating comprehensive documentation and example scripts that showcase the multi-scale hierarchical model's capabilities. Specifically:\n\n1. Create Jupyter notebooks with step-by-step examples showing:\n   - How to extract and classify statements across multiple biological scales\n   - How to handle statements that belong to multiple categories simultaneously\n   - Best practices for interpreting cross-scale relationships\n   - Common edge cases and their solutions\n\n2. Update the documentation to include:\n   - Clear explanations of the multi-label classification methodology\n   - Visual diagrams showing the hierarchical relationships between scales\n   - API reference for all relevant functions with parameter descriptions\n   - Performance metrics and expected accuracy across different biological domains\n\n3. Provide concrete examples using real biological statements that demonstrate:\n   - Genetic to molecular scale transitions\n   - Molecular to cellular scale relationships\n   - Cellular to systems level classifications\n   - Organism-level statement categorization\n   - Statements that span multiple scales simultaneously\n\n4. Include optimization guidelines for users working with different types of biological literature or datasets.",
+      "testStrategy": "Validation should include:\n\n1. User testing with 3-5 researchers not familiar with the system to verify they can successfully follow the examples and documentation to classify sample statements.\n\n2. Technical verification:\n   - Run all example scripts to ensure they execute without errors\n   - Verify that all documented API calls work as described\n   - Test all code snippets in the documentation for correctness\n   - Ensure compatibility with the current version of the system\n\n3. Content validation:\n   - Confirm all biological scale transitions are accurately represented\n   - Verify that multi-label classification examples correctly show how statements can belong to multiple categories\n   - Check that edge cases mentioned in the documentation have working solutions\n\n4. Documentation completeness check:\n   - Create a checklist of all system features related to multi-label and cross-scale classification\n   - Ensure each feature has corresponding documentation and examples\n   - Verify that performance metrics and limitations are honestly represented\n\nThe task is complete when new users can successfully implement multi-label and cross-scale classification using only the documentation and example scripts.",
+      "status": "pending",
+      "dependencies": [
+        3
+      ],
+      "priority": "medium"
     }
   ],
   "metadata": {

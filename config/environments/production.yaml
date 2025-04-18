@@ -1,0 +1,40 @@
+# Production Environment Configuration
+
+# Override base settings for production
+debug: false
+
+# Production-specific logging
+logging:
+  level: WARNING
+  console_output: false
+  file: logs/voyager_prod.log
+  rotate_logs: true
+  max_log_size_mb: 10
+  backup_count: 5
+
+# LLM settings for production
+llm:
+  model: gpt-4o
+  temperature: 0.5  # Lower temperature for more deterministic results
+  max_tokens: 4000  # Higher token limit for production
+  # Higher request rate for production
+  requests_per_minute: 60
+
+# Database settings for production
+database:
+  type: postgresql
+  # These will be overridden by environment variables in production
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  name: ${DB_NAME}
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
+  ssl_mode: require
+  connection_pool: 10
+
+# Search settings for production
+search:
+  max_results: 100
+  min_relevance: 0.7
+  cache_results: true
+  cache_expiry_hours: 48

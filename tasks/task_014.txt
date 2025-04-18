@@ -1,0 +1,52 @@
+# Task ID: 14
+# Title: Update Documentation and Example Scripts for Multi-label and Cross-scale Classification
+# Status: pending
+# Dependencies: 3
+# Priority: medium
+# Description: Update example scripts and documentation to demonstrate how to use the system for multi-label classification and cross-scale categorization of biological statements.
+# Details:
+This task involves creating comprehensive documentation and example scripts that showcase the multi-scale hierarchical model's capabilities. Specifically:
+
+1. Create Jupyter notebooks with step-by-step examples showing:
+   - How to extract and classify statements across multiple biological scales
+   - How to handle statements that belong to multiple categories simultaneously
+   - Best practices for interpreting cross-scale relationships
+   - Common edge cases and their solutions
+
+2. Update the documentation to include:
+   - Clear explanations of the multi-label classification methodology
+   - Visual diagrams showing the hierarchical relationships between scales
+   - API reference for all relevant functions with parameter descriptions
+   - Performance metrics and expected accuracy across different biological domains
+
+3. Provide concrete examples using real biological statements that demonstrate:
+   - Genetic to molecular scale transitions
+   - Molecular to cellular scale relationships
+   - Cellular to systems level classifications
+   - Organism-level statement categorization
+   - Statements that span multiple scales simultaneously
+
+4. Include optimization guidelines for users working with different types of biological literature or datasets.
+
+# Test Strategy:
+Validation should include:
+
+1. User testing with 3-5 researchers not familiar with the system to verify they can successfully follow the examples and documentation to classify sample statements.
+
+2. Technical verification:
+   - Run all example scripts to ensure they execute without errors
+   - Verify that all documented API calls work as described
+   - Test all code snippets in the documentation for correctness
+   - Ensure compatibility with the current version of the system
+
+3. Content validation:
+   - Confirm all biological scale transitions are accurately represented
+   - Verify that multi-label classification examples correctly show how statements can belong to multiple categories
+   - Check that edge cases mentioned in the documentation have working solutions
+
+4. Documentation completeness check:
+   - Create a checklist of all system features related to multi-label and cross-scale classification
+   - Ensure each feature has corresponding documentation and examples
+   - Verify that performance metrics and limitations are honestly represented
+
+The task is complete when new users can successfully implement multi-label and cross-scale classification using only the documentation and example scripts.

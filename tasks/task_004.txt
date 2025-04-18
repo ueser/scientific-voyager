@@ -1,6 +1,6 @@
 # Task ID: 4
 # Title: Build Statement Storage and Indexing System
-# Status: pending
+# Status: done
 # Dependencies: 3
 # Priority: high
 # Description: Create the data storage infrastructure for extracted and categorized statements with proper indexing and UID assignment.
@@ -11,7 +11,7 @@ Implement local storage for prototype phase. Design database schema for Neo4j im
 Benchmark read/write performance. Test concurrent access patterns. Verify data integrity after CRUD operations. Test UID uniqueness under load. Validate indexing effectiveness with search performance tests. Verify successful data migration between storage systems.
 
 # Subtasks:
-## 1. Implement Local Storage System for Statements [pending]
+## 1. Implement Local Storage System for Statements [done]
 ### Dependencies: None
 ### Description: Create a file-based storage system for extracted biomedical statements that will serve during the prototype phase
 ### Details:
@@ -30,7 +30,7 @@ Testing approach:
 - Verify data integrity after read/write operations
 - Performance testing with larger datasets to identify bottlenecks
 
-## 2. Design and Implement UID Generation and Indexing System [pending]
+## 2. Design and Implement UID Generation and Indexing System [done]
 ### Dependencies: 4.1
 ### Description: Create a system for generating unique identifiers for statements and build an indexing mechanism for biomedical terms and concepts
 ### Details:
@@ -49,7 +49,7 @@ Testing approach:
 - Benchmark index lookup performance
 - Test versioning system with statement updates
 
-## 3. Design and Implement Neo4j Database Schema [pending]
+## 3. Design and Implement Neo4j Database Schema [done]
 ### Dependencies: 4.1, 4.2
 ### Description: Create a graph database schema in Neo4j for storing biomedical statements and their relationships
 ### Details:
@@ -69,7 +69,7 @@ Testing approach:
 - Validate constraints and data integrity rules
 - Test recovery from failure scenarios
 
-## 4. Develop Data Access Layer with Storage Backend Abstraction [pending]
+## 4. Develop Data Access Layer with Storage Backend Abstraction [done]
 ### Dependencies: 4.1, 4.2, 4.3
 ### Description: Create an abstraction layer that allows seamless switching between storage backends and implement migration tools
 ### Details:

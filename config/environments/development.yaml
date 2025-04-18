@@ -1,0 +1,27 @@
+# Development Environment Configuration
+
+# Override base settings for development
+debug: true
+
+# Development-specific logging
+logging:
+  level: DEBUG
+  console_output: true
+
+# LLM settings for development
+llm:
+  model: gpt-4o
+  temperature: 0.7
+  max_tokens: 2000
+  # Lower request rate for development
+  requests_per_minute: 10
+
+# Database settings for development
+database:
+  type: sqlite
+  path: data/voyager_dev.db
+
+# Search settings for development
+search:
+  max_results: 20  # Lower for faster development testing
+  min_relevance: 0.5  # More permissive for testing
